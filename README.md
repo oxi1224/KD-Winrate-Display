@@ -1,5 +1,5 @@
-<h1>KeyDrop Winrate Display<h1>
-<h2>Jak zainstalować?<h2>
+<h2>KeyDrop Winrate Display<h1>
+<h1>Jak zainstalować?<h2>
 <h3>Przeglądarki bazowane na chromium:<h3>
 <p>Są to np. Chrome, Opera GX, Microsoft Edge
 <ul>
