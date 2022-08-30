@@ -3,7 +3,7 @@
 <h3>Przeglądarki bazowane na chromium:<h3>
 <p>Są to np. Chrome, Opera GX, Microsoft Edge
 <ul>
-<li>Pobierz [ten](https://github.com/oxi1224/KD-Winrate-Display/archive/refs/heads/main.zip) plik</li>
+<li>Pobierz https://github.com/oxi1224/KD-Winrate-Display/archive/refs/heads/main.zip</li>
 <li>Rozpakuj go do folderu</li>
 <li>Wejdź na stronę: chrome://extensions (działa na wyżej wspomnianych przeglądarkach)</li>
 <li>Włącz tryb programisty</li>
