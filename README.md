@@ -1,15 +1,15 @@
 <h1>KeyDrop Winrate Display</h1>
-<h2>Jak zainstalować?</h2>
-<h3>Przeglądarki bazowane na chromium:</h3>
-<p>Są to np. Chrome, Opera GX, Microsoft Edge
+<h2>installation:</h2>
+<h3>Chromium based browsers:</h3>
+<p>works for Chrome, Opera GX, and Microsoft Edge
 <ul>
-<li>Pobierz https://github.com/oxi1224/KD-Winrate-Display/archive/refs/heads/main.zip</li>
-<li>Rozpakuj go do folderu</li>
-<li>Wejdź na stronę: chrome://extensions (działa na wyżej wspomnianych przeglądarkach)</li>
-<li>Włącz tryb programisty</li>
-<li>Kliknij przycisk "Załaduj rozpakowane"</li>
-<li>Wybierz folder z rozszerzeniem</li>
+<li>download https://github.com/oxi1224/KD-Winrate-Display/archive/refs/heads/main.zip</li>
+<li>unpack it inside a directory</li>
+<li>go to the website: chrome://extensions (only works on the mentioned browsers)</li>
+<li>enable "developer mode"</li>
+<li>Click the "Load unpacked" button</li>
+<li>Select the folder that contains the extention</li>
 </ul>
 </p>
-<h3>Inne przeglądarki:</h3>
-<p>Ze względu na to że w każdej przeglądarce może być inny sposób, proszę wyszukaj "jak zainstalować rozszerzenie z pliku na przeglądarce X"</p>
+<h3>for other browsers:</h3>
+<p>since browsers have different methods for installing extentions, just search "how to install an extension from a file on browser X"</p>
