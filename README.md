@@ -1,6 +1,6 @@
-<h2>KeyDrop Winrate Display<h1>
-<h1>Jak zainstalować?<h2>
-<h3>Przeglądarki bazowane na chromium:<h3>
+<h1>KeyDrop Winrate Display</h1>
+<h2>Jak zainstalować?</h2>
+<h3>Przeglądarki bazowane na chromium:</h3>
 <p>Są to np. Chrome, Opera GX, Microsoft Edge
 <ul>
 <li>Pobierz https://github.com/oxi1224/KD-Winrate-Display/archive/refs/heads/main.zip</li>
