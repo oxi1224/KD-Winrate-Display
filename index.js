@@ -14,19 +14,9 @@
 //
 // NAME class: div.text-center.text-white.uppercase.rounded-lg
 window.onload = (async () => {
+  await new Promise(r => setTimeout(r, 1000));
   const goldenNames = ['foster', 'predator', 'optimal', 'solar', 'wind', 'ruby', 'shark', 'wrap', 'samurai', 'atum', 'gold-digger', 'rubin-rain', 'amethyst-light', 'diamond-sky', 'emerald-cut'];
-  const sectionIds = [
-    "limited-edition",
-    "youtubers-cases",
-    "cs-go-kings",
-    "cs-go-cage",
-    "cs-go-magic",
-    "cs-go-heroes",
-    "cs-go-premium",
-    "cs-go-skins",
-    "cs-go-guns",
-    "gold-area"
-  ];
+  const sectionIds = [...document.querySelectorAll('div > section')].map(el => el.id).filter(id => !['games', 'kings-game'].includes(id) && id);
   const url = 'https://raw.githubusercontent.com/oxi1224/files/main/data-new.json';
   
   (async () => {
