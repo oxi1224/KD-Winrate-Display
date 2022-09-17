@@ -20,6 +20,15 @@ window.onload = (async () => {
   const url = 'https://raw.githubusercontent.com/oxi1224/files/main/data-new.json';
   
   (async () => {
+    const styles = {
+      base: 'pointer-events: none; background-color: rgba(25, 24, 30, .95); border: .5px solid #dfb36b; font-weight: bold; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 13px; color: white; text-align: center; width: fit-content; height: fit-content; z-index: 9999999; border-radius: 5px; padding: .5rem .75rem;',
+      good: 'box-shadow: rgba(80, 227, 109, 0.4) 0px 0px 6px, rgba(80, 227, 109, 0.4) 0px 0px 6px inset; border: 1px solid rgb(80 227 109); color: rgb(80 227 109);',
+      bad: 'box-shadow: rgba(255,68,93,.4) 0px 0px 6px, rgba(255,68,93,.4) 0px 0px 6px inset; border: 1px solid rgb(255 68 93); color: rgb(255 68 93);',
+      chancesBase: 'background-color: rgba(25, 24, 30, .95); pointer-events: none; position: fixed; font-size: 13px; text-align: center; width: fit-content; height: fit-content; z-index: 9999999; padding: .5rem .75rem; border-radius: .5rem;',
+      chancesGood: 'box-shadow: rgba(80, 227, 109, 0.4) 0px 0px 6px, rgba(80, 227, 109, 0.4) 0px 0px 6px inset; border: 1px solid rgb(80 227 109); top: 20px; left: 20px; color: rgb(80 227 109);',
+      chancesBad: 'box-shadow: rgba(255,68,93,.4) 0px 0px 6px, rgba(255,68,93,.4) 0px 0px 6px inset; border: 1px solid rgb(255 68 93); top: 20px; right: 20px; color: rgb(255 68 93);',
+      winrate: 'top: 20px; left: 50%; transform: translateX(-50%); box-shadow: rgba(220, 174, 100, .4) 0px 0px 6px, rgba(220, 174, 100, .4) 0px 0px 6px inset; border: 1px solid rgb(220, 174, 100)',
+    };
     const data = await (await fetch(url)).json();
     if (/https:\/\/key-drop.com\/(pl|en)\/skins\/category\/.+/.test(window.location.href)) {
       const caseName = (window.location.href.split(/https:\/\/key-drop.com\/(pl|en)\/skins\/category\//))[2];
@@ -29,11 +38,11 @@ window.onload = (async () => {
       const looseElm = document.createElement('div');
       const statsElm = document.createElement('div');
       document.body.style.position = 'relative';
-      profitElm.style.cssText = 'background-color: #5cd65c; border: 2px solid #2eb82e; position: fixed; top: 20px; left: 20px; font-size: 13px; color: white; text-align: center; width: fit-content; height: fit-content; z-index: 9999999; border-radius: 20px; padding: 1rem 1.5rem;';
+      profitElm.style.cssText = styles.chancesBase + styles.chancesGood;
       profitElm.innerHTML = `Szanse na X razy zwortu:<br>${(Object.entries(caseData.profitChances).map(([k, v]) => `${k}: ${v}`)).join('<br>')}`;
-      looseElm.style.cssText = 'background-color: #ff3333; border: 2px solid #cc0000; position: fixed; top: 20px; right: 20px; font-size: 13px; color: white; text-align: center; width: fit-content; height: fit-content; z-index: 9999999; border-radius: 20px; padding: 1rem 1.5rem;';
+      looseElm.style.cssText = styles.chancesBase + styles.chancesBad;
       looseElm.innerHTML = `Szanse na X razy straty:<br>${(Object.entries(caseData.looseChances).map(([k, v]) => `${k}: ${v}`)).join('<br>')}`;
-      statsElm.style.cssText = 'background-color: #3e321e; border: 1px solid #dcae64; position: fixed; top: 20px; left: 50%; transform: translateX(-50%); font-size: 13px; color: white; text-align: center; width: fit-content; height: fit-content; z-index: 99999; border-radius: 5px; padding: 1rem 1.5rem;';
+      statsElm.style.cssText = styles.chancesBase + styles.winrate;
       statsElm.innerHTML = `Szansa na <b>wygraną</b>: ${caseData.winChance}%<br>Szansa na <b>przegraną</b>: ${caseData.looseChance}%`;
       document.body.appendChild(profitElm);
       document.body.appendChild(looseElm);
@@ -65,8 +74,8 @@ window.onload = (async () => {
         if (!caseData) return;
         c.style.position = 'relative';
         const infoEl = document.createElement('div');
-        infoEl.style.cssText = `${(caseData?.winChance < 30 || caseData?.pricePerPln > 350) ? 'background-color: #ff3333; border: 2px solid #cc0000;' : 'background-color: #5cd65c; border: 2px solid #2eb82e;'} position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 13px; color: white; text-align: center; width: fit-content; height: fit-content; z-index: 9999999; border-radius: 20px; padding: .25rem .5rem;`;
-        infoEl.textContent = goldenNames.includes(caseName[1]) ? `Średni gold na zł: ${caseData.pricePerPln}` : `Winrate: ${caseData.winChance}%`;
+        infoEl.style.cssText = styles.base + ((caseData?.winChance < 30 || caseData?.pricePerPln > 350) ? styles.bad : styles.good);
+        infoEl.innerHTML = goldenNames.includes(caseName[1]) ? `Średni&nbspgold&nbspna&nbspzł:&nbsp${caseData.pricePerPln}` : `Winrate:&nbsp${caseData.winChance}%`;
         c.appendChild(infoEl);
       });
     }
