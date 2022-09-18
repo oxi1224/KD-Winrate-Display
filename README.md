@@ -4,7 +4,7 @@
 <p>Są to np. Chrome, Opera GX, Microsoft Edge
 <ul>
 <li>Pobierz https://github.com/oxi1224/KD-Winrate-Display/archive/refs/heads/main.zip</li>
-<li>Rozpakuj go do folderu</li>
+<li>Rozpakuj go do folderu (np. za pomocą https://www.7-zip.org/)</li>
 <li>Wejdź na stronę: chrome://extensions (działa na wyżej wspomnianych przeglądarkach)</li>
 <li>Włącz tryb programisty</li>
 <li>Kliknij przycisk "Załaduj rozpakowane"</li>
