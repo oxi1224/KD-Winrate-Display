@@ -68,38 +68,29 @@ window.onload = (async () => {
         if (!c) return;
         const caseName = (((c.querySelector('a.z-20.w-full.h-full.col-start-1.row-start-1.row-end-3') ?? c.querySelector('a.case__link'))?.href)?.split('/skins/category/'));
         const caseData = data[caseName[1]];
-        if (!caseData) return;
-        c.style.position = 'relative';
-        const profitElm = document.createElement('div');
-        const looseElm = document.createElement('div');
-        const statsElm = document.createElement('div');
-        profitElm.style.cssText = styles.chancesBase + styles.chancesGood;
-        profitElm.innerHTML = `Szanse na X razy zwortu:<br>${(Object.entries(caseData.profitChances).map(([k, v]) => `${k}: ${v}`)).join('<br>')}`;
-        looseElm.style.cssText = styles.chancesBase + styles.chancesBad;
-        looseElm.innerHTML = `Szanse na X razy straty:<br>${(Object.entries(caseData.looseChances).map(([k, v]) => `${k}: ${v}`)).join('<br>')}`;
-        statsElm.style.cssText = styles.chancesBase + styles.winrate;
-        statsElm.innerHTML = `Szansa na <b>wygraną</b>: ${caseData.winChance}%<br>Szansa na <b>przegraną</b>: ${caseData.looseChance}%`;
-    
+        if (!caseData) return;    
         const infoEl = document.createElement('div');
         infoEl.style.cssText = styles.base + ((caseData?.winChance < 30 || caseData?.pricePerPln > 350) ? styles.bad : styles.good);
         infoEl.innerHTML = goldenNames.includes(caseName[1]) ? `Średni&nbspgold&nbspna&nbspzł:&nbsp${caseData.pricePerPln}` : `Winrate:&nbsp${caseData.winChance}%`;
-        c.addEventListener('mouseover', () => {
-          const profitElm = document.createElement('div');
-          const looseElm = document.createElement('div');
-          const statsElm = document.createElement('div');
-          document.body.style.position = 'relative';
-          profitElm.style.cssText = styles.chancesBase + styles.chancesGood;
-          profitElm.innerHTML = `Szanse na X razy zwortu:<br>${(Object.entries(caseData.profitChances).map(([k, v]) => `${k}: ${v}`)).join('<br>')}`;
-          profitElm.id = 'temp';
-          looseElm.style.cssText = styles.chancesBase + styles.chancesBad;
-          looseElm.innerHTML = `Szanse na X razy straty:<br>${(Object.entries(caseData.looseChances).map(([k, v]) => `${k}: ${v}`)).join('<br>')}`;
-          looseElm.id = 'temp';
-          statsElm.style.cssText = styles.chancesBase + styles.winrate;
-          statsElm.innerHTML = `${caseData.websiteName}:<br>Szansa na <b>wygraną</b>: ${caseData.winChance}%<br>Szansa na <b>przegraną</b>: ${caseData.looseChance}%`;
-          statsElm.id = 'temp';
-          [profitElm, looseElm, statsElm].forEach(e => document.body.appendChild(e));
-        });
-        c.addEventListener('mouseout', () => [...document.querySelectorAll('div#temp')].forEach(e => e.remove()));
+        if (!goldenNames.includes(caseName[1])) {
+          c.addEventListener('mouseover', () => {
+            const profitElm = document.createElement('div');
+            const looseElm = document.createElement('div');
+            const statsElm = document.createElement('div');
+            document.body.style.position = 'relative';
+            profitElm.style.cssText = styles.chancesBase + styles.chancesGood;
+            profitElm.innerHTML = `Szanse na X razy zwortu:<br>${(Object.entries(caseData.profitChances).map(([k, v]) => `${k}: ${v}`)).join('<br>')}`;
+            profitElm.id = 'temp';
+            looseElm.style.cssText = styles.chancesBase + styles.chancesBad;
+            looseElm.innerHTML = `Szanse na X razy straty:<br>${(Object.entries(caseData.looseChances).map(([k, v]) => `${k}: ${v}`)).join('<br>')}`;
+            looseElm.id = 'temp';
+            statsElm.style.cssText = styles.chancesBase + styles.winrate;
+            statsElm.innerHTML = `${caseData.websiteName}:<br>Szansa na <b>wygraną</b>: ${caseData.winChance}%<br>Szansa na <b>przegraną</b>: ${caseData.looseChance}%`;
+            statsElm.id = 'temp';
+            [profitElm, looseElm, statsElm].forEach(e => document.body.appendChild(e));
+          });
+          c.addEventListener('mouseout', () => [...document.querySelectorAll('div#temp')].forEach(e => e.remove()));
+        } 
         c.appendChild(infoEl);
       });
     }
