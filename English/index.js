@@ -55,7 +55,7 @@ window.onload = (async () => {
         const caseData = data[caseName[1]];
         if (!caseData) return;    
         const infoEl = document.createElement('div');
-        infoEl.style.cssText = styles.base + ((caseData?.winChance < 30 || caseData?.pricePerPln > 300) ? styles.bad : styles.good);
+        infoEl.style.cssText = styles.base + ((caseData?.winChance < 30 || caseData?.pricePerPln > 1400) ? styles.bad : styles.good);
         infoEl.innerHTML = goldenNames.includes(caseName[1]) ? `Avg&nbspgold&nbspfor&nbsp1&nbspUSD:&nbsp${caseData.pricePerPln}` : `Winrate:&nbsp${caseData.winChance}%`;
         if (!goldenNames.includes(caseName[1])) {
           c.addEventListener('mouseover', () => {
@@ -75,7 +75,7 @@ window.onload = (async () => {
             [profitElm, looseElm, statsElm].forEach(e => document.body.appendChild(e));
           });
           c.addEventListener('mouseout', () => [...document.querySelectorAll('div#temp')].forEach(e => e.remove()));
-        } 
+        }  
         c.appendChild(infoEl);
       });
     }
