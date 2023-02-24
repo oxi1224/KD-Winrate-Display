@@ -5,7 +5,7 @@
 <p>Są to np. Chrome, Opera GX, Microsoft Edge
 <ul>
 <li>Pobierz https://github.com/oxi1224/files/releases/download/Release/Polish.zip</li>
-<li>Rozpakuj go do folderu</li>
+<li>Rozpakuj go do folderu (https://support.microsoft.com/en-us/windows/zip-and-unzip-files-8d28fa72-f2f9-712f-67df-f80cf89fd4e5)</li>
 <li>Wejdź na stronę: chrome://extensions (działa na wyżej wspomnianych przeglądarkach)</li>
 <li>Włącz tryb programisty</li>
 <li>Kliknij przycisk "Załaduj rozpakowane"</li>
@@ -22,7 +22,7 @@
 <p>Eg: Chrome, Opera GX, Microsoft Edge
 <ul>
 <li>Download https://github.com/oxi1224/files/releases/download/Release/English.zip</li>
-<li>Unzip into a folder</li>
+<li>Unzip into a folder (https://support.microsoft.com/en-us/windows/zip-and-unzip-files-8d28fa72-f2f9-712f-67df-f80cf89fd4e5)</li>
 <li>Go to: chrome://extensions (works on all aformentioned browsers)</li>
 <li>Turn on programmer mode</li>
 <li>Click "Load Unpacked"</li>
