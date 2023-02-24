@@ -31,5 +31,8 @@
 </p>
 <h3>Other browsers:</h3>
 <p>Because every browser may have it's own unique way of adding local extensions, I'm unable to provide a tutorial that works for every one.</p>
+<h3>Showcase</h3>
+[1](/assets/1.png)
+[2](/assets/2.png)
 <h3>Info</h3>
 <p>If you want to support me in some way, feel free to use my code OXIII on https://plg.bet/ (in tab bonuses in promocode or use https://plg.bet/?r=OXIII) or code OXIIIII on https://keydrop.com/ (https://key-drop.com/?code=OXIIIII)</p>
