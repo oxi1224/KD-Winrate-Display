@@ -15,8 +15,8 @@ window.onload = (async () => {
       winrate: 'top: 20px; left: 50%; transform: translateX(-50%); box-shadow: rgba(220, 174, 100, .4) 0px 0px 6px, rgba(220, 174, 100, .4) 0px 0px 6px inset; border: 1px solid rgb(220, 174, 100)',
     };
     const data = await (await fetch(url, { cache: 'no-cache' })).json();
-    if (/https:\/\/key-drop.(com|gg)\/(pl|en)\/skins\/category\/.+/.test(window.location.href)) {
-      const caseName = (window.location.href.split(/https:\/\/key-drop.com\/(pl|en)\/skins\/category\//))[2];
+    if (/https:\/\/key-drop.(com|gg)\/.+\/skins\/category\/.+/.test(window.location.href)) {
+      const caseName = (window.location.href.split(/https:\/\/key-drop.(com|gg)\/.+\/skins\/category\//))[2];
       const caseData = data[caseName];
       if (!caseData) return;
       const profitElm = document.createElement('div');
@@ -32,7 +32,7 @@ window.onload = (async () => {
       [profitElm, looseElm, statsElm].forEach(e => document.body.appendChild(e));
     }
 
-    if (window.location.href.match(/https:\/\/key-drop.com\/(pl|en)\//)) {
+    if (window.location.href.match(/https:\/\/key-drop.(com|gg)\/.+\//)) {
       // eslint-disable-next-line no-constant-condition
       if (!document.getElementById(sectionIds[0])) while (true) {
         await new Promise(r => setTimeout(r, 1000));
