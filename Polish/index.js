@@ -15,7 +15,7 @@ window.onload = (async () => {
       winrate: 'top: 20px; left: 50%; transform: translateX(-50%); box-shadow: rgba(220, 174, 100, .4) 0px 0px 6px, rgba(220, 174, 100, .4) 0px 0px 6px inset; border: 1px solid rgb(220, 174, 100)',
     };
     const data = await (await fetch(url, { cache: 'no-cache' })).json();
-    if (/https:\/\/key-drop.com\/(pl|en)\/skins\/category\/.+/.test(window.location.href)) {
+    if (/https:\/\/key-drop.(com|gg)\/(pl|en)\/skins\/category\/.+/.test(window.location.href)) {
       const caseName = (window.location.href.split(/https:\/\/key-drop.com\/(pl|en)\/skins\/category\//))[2];
       const caseData = data[caseName];
       if (!caseData) return;
