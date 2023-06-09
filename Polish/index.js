@@ -1,6 +1,6 @@
 window.onload = (async () => {
   await new Promise(r => setTimeout(r, 1000));
-  const goldenNames = ['foster', 'predator', 'optimal', 'solar', 'wind', 'ruby', 'shark', 'wrap', 'samurai', 'atum', 'gold-digger', 'rubin-rain', 'amethyst-light', 'diamond-sky', 'emerald-cut'];
+  const goldenNames = ['gold-digger', 'foster', 'shark', 'rubin-rain', 'predator', 'ruby', 'amethyst-light', 'optimal', 'atum', 'wrap', 'solar', 'diamond-sky', 'samurai', 'wind', 'emerald-cut', 'recon', 'topaz', 'bony', 'magent', 'assault'];
   const sectionIds = [...document.querySelectorAll('div > section')].map(el => el.id).filter(id => !['games', 'kings-game'].includes(id) && id);
   const url = 'https://raw.githubusercontent.com/oxi1224/files/main/data-polish.json';
   
